@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadaca 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <br>
+    <br>
+    <table border="1" align="center">
+        <thead>
+            <th colspan="2">Ognen's pizza shop</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <form action="#">
+                        <input type="text">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Pizza topping</td>
+                <td>
+                    <form action="#">
+                        <input type="radio" id="Supreme">
+                        <label for="Supreme">Supreme</label><br>
+                        <input type="radio" id="Vegetarian">
+                        <label for="Vegetarian">Vegetarian</label><br>
+                        <input type="radio" id="Hawaiian">
+                        <label for="Hawaiian">Hawaiian</label><br>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Pizza sauce</td>
+                <td>
+                    <form action="#">
+                        <select name="" id="">
+                            <option value="tomato">Tomato</option>
+                            <option value="white">White</option>
+                            <option value="spicy">Spicy</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Optional extras</td>
+                <td>
+                    <form action="#">
+                        <input type="checkbox" id="Extra cheese">
+                        <label for="Extra cheese">Extra cheese</label>
+                        <input type="checkbox" id="Gluten free">
+                        <label for="Gluten free">Gluten free base</label>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Delivery instructions: <br>
+                    <textarea name="" id="" cols="70" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <form action="#">
+                        <input type="submit" onclick="alert('Order sent')" value="Send my order">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
