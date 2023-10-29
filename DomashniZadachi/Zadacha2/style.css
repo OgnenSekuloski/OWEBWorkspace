@@ -5,6 +5,9 @@ body {
     background-size: cover;
     height: 100%;
     background-repeat: no-repeat;
+
+    font-family: 'Century Gothic', 'Candara', 'Calibry'; 
+
 }
 
 table {
@@ -15,7 +18,7 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-style: normal; */
 
     position: absolute;
     top: 50%;
@@ -48,6 +51,7 @@ select {
 }
 
 textarea {
+    padding: 5px;
     width: 80%;
     border-radius: 10px;
     border: rgb(76, 8, 6) solid 1px;
