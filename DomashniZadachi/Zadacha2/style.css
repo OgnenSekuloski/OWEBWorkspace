@@ -29,6 +29,8 @@ table {
 input[type=text] {
     width: 80%;
     margin-left: 10%;
+
+    font-family: 'Century Gothic', 'Candara', 'Calibry'; 
     
     padding: 5px;
     /* border-radius: 10px; */
@@ -40,21 +42,36 @@ input[type=text] {
     caret-color: #ddd;
 }
 
-select {
+input[type=submit] {
     padding: 5px;
-    width: 80%;
+    width: 40%;
+    margin-left: 30%;
+    
+    font-family: 'Century Gothic', 'Candara', 'Calibry'; 
     text-align: center;
 
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+select {
+    padding: 5px;
+    width: 80%;
+    
+    text-align: center;
+    font-family: 'Century Gothic', 'Candara', 'Calibry'; 
+
+    border: none;
+    border-radius: 5px;
     background-color: #f1f1f1;
 }
 
 textarea {
     padding: 5px;
     width: 80%;
-    border-radius: 10px;
-    border: rgb(76, 8, 6) solid 1px;
+    border-radius: 5px;
+    /* border: rgb(76, 8, 6) solid 1px; */
+    border: none;
     resize: none;
 }
 
@@ -64,7 +81,7 @@ th, td {
 }
 
 tr:hover {
-    background-color: rgba(76, 8, 6, 0.7);
+    background-color: rgba(76, 8, 6, 0.6);
 }
 
 
@@ -88,4 +105,32 @@ tr:hover {
     display: block;
     text-align: center;
 }
+
+.placeH {
+    font-style: italic;
+    font-family: 'Century Gothic', 'Candara', 'Calibry'; 
+}
+
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input:focus::-moz-placeholder {
+   opacity: 0;
+}
+ 
+input:focus:-ms-input-placeholder {
+    opacity: 0;
+}
+ 
+input:focus:-moz-placeholder {
+   opacity: 0;
+}
+
+input[type=submit]:hover {
+    background-color: lightcoral;
+    color: white;
+}
+
 
