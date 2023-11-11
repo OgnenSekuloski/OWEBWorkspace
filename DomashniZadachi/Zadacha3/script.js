@@ -25,7 +25,7 @@ const eightLetterWords = [
 
 
 //picking a random word
-    let currentWord = eightLetterWords[parseInt(Math.random()*eightLetterWords.length)];
+    let currentWord = eightLetterWords[parseInt(Math.random()*eightLetterWords.length)].toUpperCase();
 //getting word length
     // let wordLength = currentWord.length;
 
@@ -66,12 +66,14 @@ const eightLetterWords = [
     for (let index = 0; index < currentWord.length; index++) {
         const element = currentWord[index];
         console.log("Letter at index " + index + " is " + element);
+
+        
     }
 
     console.log("***");
     console.log(currentWord[parseInt(Math.random()*currentWord.length)]);
 
-    generateInputs(parseInt(currentWord.length));
+    generateInputs(parseInt(currentWord.length), controlArray, finalArray);
 
 });
     
@@ -79,7 +81,7 @@ const eightLetterWords = [
 
 //generating the correct number of inputs
 
-function generateInputs(numOfInputs) {
+function generateInputs(numOfInputs, arr1, arr2) {
     const inputCount = parseInt(numOfInputs);
     
     const inputContainer = document.getElementById('inputContainer');
@@ -97,6 +99,10 @@ function generateInputs(numOfInputs) {
         input.id = 'LetterInput' + index;
         input.maxLength = 1;
         inputContainer.appendChild(input);
+        if (arr1[index][1] == 1) {
+            input.defaultValue = arr2[index];
+            input.disabled = true;
+        }
     }
 }
 
