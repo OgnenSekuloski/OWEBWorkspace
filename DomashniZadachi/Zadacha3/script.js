@@ -27,6 +27,8 @@ window.onload = function () {
     let controlArray;
 
     let attempts = 5;
+    let timer;
+
 
 
 
@@ -48,6 +50,7 @@ window.onload = function () {
         setup(eightLetterWords, currentWord, finalArray, controlArray, attempts);
         document.getElementById("gameElements").style.display = 'flex';
         document.getElementById("Start").style.display = 'none';
+        startTimer();
 
     });
 
@@ -62,7 +65,8 @@ window.onload = function () {
             document.getElementById("restart").style.display = 'flex';
             document.getElementById("restart").addEventListener("click", function () {
                 location.reload(); // Reload the page
-            });        
+            });
+            stopTimer();   
         }
     });
 
@@ -124,7 +128,8 @@ function setup(array, currentWord, final, controlArray, attempts) {
         generateInputs(parseInt(currentWord.length), controlArray, finalArray);
 
         if (finalArray.join('') == currentWord) {
-            alert("Congrats");
+            const elapsedTime = document.getElementById("timerDisplay").textContent;
+            alert("Congrats, you guessed the word correctly \n" + elapsedTime);
             document.getElementById("game").style.display = 'none';
             document.getElementById("restart").style.display = 'flex';
             document.getElementById("restart").addEventListener("click", function () {
@@ -139,6 +144,20 @@ function setup(array, currentWord, final, controlArray, attempts) {
 
 function updateAttemptsDisplay(attemptsLeft) {
     document.getElementById("AttemptsLeft").textContent = "Attempts left: " + attemptsLeft;
+}
+
+function startTimer() {
+    let seconds = 0;
+    timer = setInterval(function () {
+        seconds++;
+        document.getElementById("timerDisplay").textContent = "Time: " + seconds + "s";
+    }, 1000);
+
+    return seconds;
+}
+
+function stopTimer() {
+    clearInterval(timer);
 }
 
 
