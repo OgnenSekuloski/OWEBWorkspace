@@ -37,9 +37,13 @@ let controlArray;
 
     // console.log("***");
     // console.log(currentWord[parseInt(Math.random()*currentWord.length)]);
-    
 
-setup(eightLetterWords, currentWord, finalArray, controlArray);
+    document.getElementById("Start").addEventListener("click", function() {
+        setup(eightLetterWords, currentWord, finalArray, controlArray);
+        document.getElementById("oneRow").style.display = 'flex'
+        document.getElementById("Start").style.display = 'none'
+
+    });
 
 }
 
