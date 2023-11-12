@@ -45,7 +45,7 @@ window.onload = function () {
 
 
     document.getElementById("Start").addEventListener("click", function () {
-        setup(eightLetterWords, currentWord, finalArray, controlArray);
+        setup(eightLetterWords, currentWord, finalArray, controlArray, attempts);
         document.getElementById("gameElements").style.display = 'flex';
         document.getElementById("Start").style.display = 'none';
 
@@ -62,7 +62,7 @@ window.onload = function () {
 }
 
 
-function setup(array, currentWord, final, controlArray) {
+function setup(array, currentWord, final, controlArray, attempts) {
     //picking a random word
     currentWord = array[parseInt(Math.random() * array.length)].toUpperCase();
 
@@ -99,7 +99,32 @@ function setup(array, currentWord, final, controlArray) {
     console.log(currentWord);
 
     generateInputs(parseInt(currentWord.length), controlArray, finalArray);
-    document.getElementById("checkButton").addEventListener("click", function () { getValuesOfInputs(finalArray) });
+    
+    document.getElementById("checkButton").addEventListener("click", function () {
+        console.log(getValuesOfInputs(finalArray));
+        const inputValues = getValuesOfInputs(finalArray);
+
+        for (let index = 0; index < currentWord.length; index++) {
+            if (inputValues[index] === currentWord[index]) {
+                // console.log("Input array: " + getValuesOfInputs(finalArray)[index] + " Final array: " + finalArray[index]);
+                finalArray[index] = inputValues[index];
+            }
+        }
+            console.log(finalArray);
+
+        generateInputs(parseInt(currentWord.length), controlArray, finalArray);
+
+        if (finalArray.join('') == currentWord) {
+            alert("Congrats");
+            document.getElementById("game").style.display = 'none';
+            document.getElementById("restart").style.display = 'flex';
+            document.getElementById("restart").addEventListener("click", function () {
+                location.reload(); // Reload the page
+            });
+        }
+    });
+
+    
 
 }
 
@@ -142,9 +167,9 @@ function getValuesOfInputs(arr) {
         }
     }
 
-    console.log("Input Array: " +inputArray);
+    // console.log("Input Array: " +inputArray);
 
-    console.log("final Array: "+arr);
+    // console.log("final Array: "+arr);
 
     return inputArray;
 }
