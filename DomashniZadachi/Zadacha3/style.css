@@ -17,8 +17,12 @@ input {
 }
 
 #oneRow {
-    display: none;
+    display: flex;
     align-items: center;
+}
+
+#gameElements{
+    display: none;
 }
 
 #checkButton {
