@@ -22,15 +22,37 @@ const eightLetterWords = [
     'Success'
 ];
 
+let currentWord;
+let finalArray;
+let controlArray;
 
-//picking a random word
-    let currentWord = eightLetterWords[parseInt(Math.random()*eightLetterWords.length)].toUpperCase();
+
+//testing
+    // console.log(currentWord);
+
+    // for (let index = 0; index < currentWord.length; index++) {
+    //     const element = currentWord[index];
+    //     console.log("Letter at index " + index + " is " + element);
+    // }
+
+    // console.log("***");
+    // console.log(currentWord[parseInt(Math.random()*currentWord.length)]);
+    
+
+setup(eightLetterWords, currentWord, finalArray, controlArray);
+
+}
+
+
+function setup(array, currentWord, final, controlArray) {
+    //picking a random word
+    currentWord = array[parseInt(Math.random()*array.length)].toUpperCase();
 
 //this will be the final array
-    let finalArray = new Array(currentWord.length).fill(0);
+    finalArray = new Array(currentWord.length).fill(0);
     
 //creating control array
-    let controlArray = new Array(currentWord.length);
+    controlArray = new Array(currentWord.length);
 
     for (let index = 0; index < currentWord.length; index++) {
         controlArray[index] = [currentWord[index], 0];
@@ -54,18 +76,12 @@ const eightLetterWords = [
         console.log(finalArray[index]);
     }
 
-//testing
-    console.log(currentWord);
+    // function calls and events
 
-    for (let index = 0; index < currentWord.length; index++) {
-        const element = currentWord[index];
-        console.log("Letter at index " + index + " is " + element);
-    }
 
-    console.log("***");
-    console.log(currentWord[parseInt(Math.random()*currentWord.length)]);
-
+    generateInputs(parseInt(currentWord.length), controlArray, finalArray);
     document.getElementById("checkButton").addEventListener("click", function() {getValuesOfInputs(finalArray)});
+
 
     console.log(finalArray.length);
 
