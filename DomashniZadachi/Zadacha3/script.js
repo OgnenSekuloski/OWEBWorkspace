@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-
+window.onload = function() {
 const eightLetterWords = [
     'Apple',
     'Table',
@@ -26,8 +25,6 @@ const eightLetterWords = [
 
 //picking a random word
     let currentWord = eightLetterWords[parseInt(Math.random()*eightLetterWords.length)].toUpperCase();
-//getting word length
-    // let wordLength = currentWord.length;
 
 //this will be the final array
     let finalArray = new Array(currentWord.length).fill(0);
@@ -53,10 +50,7 @@ const eightLetterWords = [
         }
     }
 
-
-
     for (let index = 0; index < currentWord.length; index++) {
-        const element = finalArray[index];
         console.log(finalArray[index]);
     }
 
@@ -66,18 +60,17 @@ const eightLetterWords = [
     for (let index = 0; index < currentWord.length; index++) {
         const element = currentWord[index];
         console.log("Letter at index " + index + " is " + element);
-
-        
     }
 
     console.log("***");
     console.log(currentWord[parseInt(Math.random()*currentWord.length)]);
 
-    generateInputs(parseInt(currentWord.length), controlArray, finalArray);
+    document.getElementById("checkButton").addEventListener("click", function() {getValuesOfInputs(finalArray)});
 
-});
-    
+    console.log(finalArray.length);
 
+
+}
 
 //generating the correct number of inputs
 
@@ -105,5 +98,26 @@ function generateInputs(numOfInputs, arr1, arr2) {
         }
     }
 }
+
+
+
+function getValuesOfInputs(arr) {
+    let inputArray = new Array();
+    for (let index = 0; index < arr.length; index++) {
+        let temp = document.getElementById(`LetterInput${index}`);
+
+        if(temp == null) {
+            inputArray[index] = arr[index];
+        } else {
+            inputArray[index] = temp.value.toUpperCase();
+        }
+    }
+
+
+    console.log(inputArray);
+
+    return inputArray;
+}
+
 
 
