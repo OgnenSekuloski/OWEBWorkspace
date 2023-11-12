@@ -26,8 +26,8 @@ window.onload = function () {
     let finalArray;
     let controlArray;
 
-    let attempts = 0;
-    const maxAttempts = 5;
+    let attempts = 5;
+
 
 
 
@@ -52,10 +52,17 @@ window.onload = function () {
     });
 
     document.getElementById("checkButton").addEventListener("click", function () {
-        if (attempts < maxAttempts) {
-            attempts++;
+        if (attempts > 1) {
+            attempts--;
+            updateAttemptsDisplay(attempts);
         } else {
+            updateAttemptsDisplay(0);
             alert("You reached the max number of attempts.");
+            document.getElementById("game").style.display = 'none';
+            document.getElementById("restart").style.display = 'flex';
+            document.getElementById("restart").addEventListener("click", function () {
+                location.reload(); // Reload the page
+            });        
         }
     });
 
@@ -105,9 +112,11 @@ function setup(array, currentWord, final, controlArray, attempts) {
         const inputValues = getValuesOfInputs(finalArray);
 
         for (let index = 0; index < currentWord.length; index++) {
+
             if (inputValues[index] === currentWord[index]) {
                 // console.log("Input array: " + getValuesOfInputs(finalArray)[index] + " Final array: " + finalArray[index]);
                 finalArray[index] = inputValues[index];
+                
             }
         }
             console.log(finalArray);
@@ -124,9 +133,15 @@ function setup(array, currentWord, final, controlArray, attempts) {
         }
     });
 
-    
+    updateAttemptsDisplay(attempts);
 
 }
+
+function updateAttemptsDisplay(attemptsLeft) {
+    document.getElementById("AttemptsLeft").textContent = "Attempts left: " + attemptsLeft;
+}
+
+
 
 //generating the correct number of inputs
 

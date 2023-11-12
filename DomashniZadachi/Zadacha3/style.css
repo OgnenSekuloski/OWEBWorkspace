@@ -25,6 +25,19 @@ input {
     display: none;
 }
 
+#Start {
+    width: 70px; 
+    height: 44px; 
+    border: solid 1px gray;
+    border-radius: 3px;
+    background-color: lightgray;
+    margin-right: 10px;
+    text-align: center; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+}
+
 #restart {
     display: none;
     width: 70px; 
