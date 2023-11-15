@@ -1,5 +1,15 @@
 let loginName = "";
 
+function login() {
+
+    loginName = prompt("Enter your name", "Ognen");
+
+    document.querySelector(".login-section").style.display = "none";
+    document.querySelector(".afterLogin").style.display = "inline";
+
+    document.getElementById("welcome").innerHTML = "Welcome " + loginName;
+}
+
 function addProductCard() {
     let productName = prompt("Enter the name of the product:");
         let productPrice = prompt("Enter the price of the product:");
@@ -32,17 +42,6 @@ function addComment(card) {
         commentElement.innerHTML = `<strong>${loginName}:</strong> ${comment}`;
         card.querySelector(".product-info").appendChild(commentElement);
     }
-}
-
-
-function login() {
-
-    loginName = prompt("Enter your name", "Ognen");
-
-    document.querySelector(".login-section").style.display = "none";
-    document.querySelector(".afterLogin").style.display = "inline";
-
-    document.getElementById("welcome").innerHTML = "Welcome " + loginName;
 }
 
 let commentButtons = document.querySelectorAll(".card-btn");
