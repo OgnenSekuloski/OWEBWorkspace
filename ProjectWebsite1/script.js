@@ -56,3 +56,8 @@ commentButtons.forEach(function (button) {
 
 document.getElementById("Loginbtn").addEventListener("click", login);
 document.getElementById("addProduct").addEventListener("click", addProductCard);
+
+
+document.querySelector(".link-item.contact a").addEventListener("click", function (event) {
+    window.location.href = "contact.html";
+});
