@@ -116,6 +116,7 @@
     justify-content: space-between; 
     overflow-x: auto;
     scroll-behavior: smooth;
+    text-align: center;
 }
 
 .product-container::-webkit-scrollbar {
@@ -175,6 +176,8 @@
 
 .product-brand {
     text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
 }
 
 .product-short-des {
