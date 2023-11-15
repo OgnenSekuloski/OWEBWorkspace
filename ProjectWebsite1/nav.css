@@ -7,11 +7,11 @@
 }
 
 .navbar {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     left: 0;
     width: 100%;
-    background: #023047;
+    background: white;
     z-index: 9;
 }
 
@@ -41,10 +41,10 @@
     padding: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid #6A7A91;
     text-transform: capitalize;
     background: none;
-    color: white;
+    color: #6A7A91;
     outline: none;
 }
 
@@ -56,7 +56,8 @@
     outline: none;
     cursor: pointer;
     background: #8ECAE6;
-    color: #023047;
+    border: 1px solid #6A7A91;
+    color: black;
     text-transform: capitalize;
     font-size: 15px;
     border-top-right-radius: 10px;
@@ -77,8 +78,8 @@
     padding: 10px 10vw;
     justify-content: center;
     list-style: none;
-    border-top: 1px solid #023047;
-    background: #8ECAE6;
+    border-top: 1px solid #6A7A91;
+    background: #6A7A91;
 }
 
 .link{
@@ -86,7 +87,7 @@
     padding: 0 10px;
     margin: 0 5px;
     text-decoration: none;
-    color: #023047;
+    color: white;
     opacity: 0.8;
     transition: .5s;
 }
