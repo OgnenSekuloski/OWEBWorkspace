@@ -1,19 +1,24 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { PRODUCTS } from './db-products';
+import { Product } from './interface';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, FormsModule, ProductCardComponent,],
+  imports: [CommonModule, FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
+
+  @Input()
+  product: Product = {} as Product;
+  
   visibleSidePanel:boolean = false;
   productObject = PRODUCTS;
+  
 
   addProduct(): void {
     const newProduct = {
@@ -27,13 +32,27 @@ export class ProductsComponent {
     };
     this.productObject.push(newProduct);
   }
+
+  removeProduct(productToRemove: Product): void {
+    const index = this.productObject.findIndex((product: Product) => product === productToRemove);
   
+    if (index !== -1) {
+      this.productObject.splice(index, 1);
+    }
+  }
+
+  // onEdit(item:any) {
+  //   this.productObject = item;
+  //   this.openSidePanel();
+  // }
+
   openSidePanel(): void {
-    this.visibleSidePanel = true; // Set visibleSidePanel to true to open the side panel
+    this.visibleSidePanel = true;
   }
   
-  closeSidePanel(){
-    this.visibleSidePanel=false;
+  closeSidePanel(): void {
+    this.visibleSidePanel = false;
   }
+  
 
 }
