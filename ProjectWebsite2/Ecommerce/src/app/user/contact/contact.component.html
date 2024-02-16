@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)"><i class="fa-solid fa-record-vinyl"></i> Vinylify</a>
+      <a class="navbar-brand" href="javascript:void(0)"
+        ><i class="fa-solid fa-record-vinyl"></i> Vinylify</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,12 +11,12 @@
             <a class="nav-link" routerLink="/shop">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login">Admin</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" routerLink="/contact">Contact</a>
           </li>
         </ul>
+        <div class="text-end">
+          <a class="btn btn-outline-warning ms-2" routerLink="/login">Admin</a>
+        </div>   
       </div>
     </div>
   </nav>

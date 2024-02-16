@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LandingComponent } from '../landing/landing.component';
+import { CartModalComponent } from '../cart-modal/cart-modal.component';
+import { Product } from '../../admin/products/interface';
 
 @Component({
   selector: 'app-contact',
