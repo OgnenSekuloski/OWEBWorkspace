@@ -11,12 +11,16 @@
           <a class="nav-link" routerLink="/shop">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Admin</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="/contact">Contact</a>
         </li>
       </ul>
+      <div class="text-end">
+        <a class="btn btn-outline-warning ms-2" routerLink="/login">Admin</a>
+        <a class="btn btn-primary ms-2" (click)="openCartModal()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge bg-danger ms-1">{{ cart.length }}</span>
+        </a>
+      </div>   
     </div>
   </div>
 </nav>
@@ -40,10 +44,10 @@
                   <p class="card-text"><b>Artist:</b> {{ product.artist }}</p>
                   <p class="card-text"><b>Genre:</b> {{ product.genre }}</p>
                   <p class="card-text">{{ product.description }}</p>
-                  <p class="card-text">
-                    <b>Price: ${{ product.price }}</b>
-                  </p>
-                  <!-- <a class="btn btn-primary" (click)="onEdit(product)">Edit</a> -->
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col-6"><b>Price: ${{ product.price }}</b></div>
+                    <div class="col-6 text-end"><a class="btn btn-primary" (click)="addToCart(product)">Add to cart</a></div>
+                  </div>
                 </div>
               </div>
             </div>

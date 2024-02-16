@@ -41,11 +41,6 @@ export class ProductsComponent {
     }
   }
 
-  // onEdit(item:any) {
-  //   this.productObject = item;
-  //   this.openSidePanel();
-  // }
-
   openSidePanel(): void {
     this.visibleSidePanel = true;
   }
